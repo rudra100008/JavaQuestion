@@ -1,3 +1,7 @@
+// I think we can do this by using SUM for no of students and AVG for marks in the query itself and display it using the ResultSet statement which is easier to do than this. (Its's just my opinion) 
+
+
+
 package com.JavaQuestion;
 //A Database db_std contains a table tbl_std having field roll,name,faculty and mark.
 // Write a program that does achieve the following:
