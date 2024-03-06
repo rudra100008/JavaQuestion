@@ -21,7 +21,6 @@ public class Spring_6b_2023 extends JFrame {
 
         JButton submit = new JButton("Submit");
         submit.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 ResultSet resultSet =databaseConnection();

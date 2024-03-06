@@ -15,7 +15,7 @@ public class Spring_6b_2021 {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection(url,user,password);
             String sql="INSERT INTO Employee(name)VALUES(?)";
-            String sql1= "SELECT COUNT(*) AS count FROM Employee";
+            String sql1= "SELECT COUNT(*) FROM Employee";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             PreparedStatement countStatement =connection.prepareStatement(sql1);
             while(true) {
@@ -23,15 +23,14 @@ public class Spring_6b_2021 {
                 Scanner scanner = new Scanner(System.in);
                 String name = scanner.next();
 
-                preparedStatement.setString(1, name);
-
+                  preparedStatement.setString(1, name);
                 int rowsInsert = preparedStatement.executeUpdate();
                 if (rowsInsert > 0) {
                     System.out.println("Data Inserted....");
                 }
                 ResultSet resultSet=countStatement.executeQuery();
                 while(resultSet.next()) {
-                    int count =resultSet.getInt("count");
+                    int count =resultSet.getInt(1);
                     System.out.println("Number of Employee: "+ count);
                 }
             }

@@ -25,8 +25,8 @@ public class Spring_3b_2023 extends JFrame {
         click.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String word1 = text1.getText();
-                String word2  =text2.getText();
+                String word1 = text1.getText().toLowerCase();
+                String word2  =text2.getText().toLowerCase();
                 if (word1.equals(word2)){
                     getContentPane().setBackground(Color.GREEN);
                 }else {
@@ -38,7 +38,7 @@ public class Spring_3b_2023 extends JFrame {
 
     public static void main(String[] args) {
         Spring_3b_2023 spring = new Spring_3b_2023();
-        spring.setLayout(new FlowLayout(FlowLayout.CENTER));
+        spring.setLayout(new GridLayout(5,0));
         spring.setSize(800,700);
         spring.setVisible(true);
     }
